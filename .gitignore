@@ -25,6 +25,10 @@
 # Ignore application configuration
 /config/application.yml
 
+# Ignore rubymine files
+.idea
+.idea/*
+
 # Environment normalisation:
 /.bundle
 /vendor/bundle
