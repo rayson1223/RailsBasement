@@ -55,6 +55,11 @@ gem 'cloudinary'
 # Use Devise for management of user login
 gem 'devise'
 
+# Use Haml for replacing erb
+gem 'haml'
+
+# Use Haml-Rails to prevent any generation templates in erb format
+gem "haml-rails", "~> 0.9"
 
 
 group :development, :test do
