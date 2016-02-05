@@ -37,12 +37,34 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    autoprefixer-rails (6.1.1)
+      execjs
+      json
+    aws-sdk (2.2.3)
+      aws-sdk-resources (= 2.2.3)
+    aws-sdk-core (2.2.3)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.2.3)
+      aws-sdk-core (= 2.2.3)
     aws_cf_signer (0.1.3)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-datepicker-rails (1.5.0)
+      railties (>= 3.0)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (6.0.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+    carrierwave-aws (1.0.0)
+      aws-sdk (~> 2.0)
+      carrierwave (~> 0.7)
     cloudinary (1.1.0)
       aws_cf_signer
       rest-client
@@ -70,21 +92,10 @@ GEM
       activesupport (>= 3.0.0)
     figaro (1.1.1)
       thor (~> 0.14)
+    font-awesome-rails (4.5.0.0)
+      railties (>= 3.2, < 5.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    haml (4.0.7)
-      tilt
-    haml-rails (0.9.0)
-      actionpack (>= 4.0.1)
-      activesupport (>= 4.0.1)
-      haml (>= 4.0.6, < 5.0)
-      html2haml (>= 1.0.1)
-      railties (>= 4.0.1)
-    html2haml (2.0.0)
-      erubis (~> 2.7.0)
-      haml (~> 4.0.0)
-      nokogiri (~> 1.6.0)
-      ruby_parser (~> 3.5)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     httparty (0.13.7)
@@ -94,11 +105,19 @@ GEM
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jmespath (1.1.3)
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     json (1.8.3)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    kgio (2.10.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -140,6 +159,7 @@ GEM
       activesupport (= 4.2.4)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+    raindrops (0.15.0)
     rake (10.4.2)
     rdoc (4.2.0)
     responders (2.1.0)
@@ -165,8 +185,6 @@ GEM
       rspec-mocks (~> 3.3.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
-    ruby_parser (3.7.1)
-      sexp_processor (~> 4.1)
     sass (3.4.18)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -177,9 +195,17 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    sexp_processor (4.6.0)
     shoulda-matchers (3.0.0)
       activesupport (>= 4.0.0)
+    slim (3.0.6)
+      temple (~> 0.7.3)
+      tilt (>= 1.3.3, < 2.1)
+    slim-rails (3.0.1)
+      actionmailer (>= 3.1, < 5.0)
+      actionpack (>= 3.1, < 5.0)
+      activesupport (>= 3.1, < 5.0)
+      railties (>= 3.1, < 5.0)
+      slim (~> 3.0)
     spring (1.4.0)
     sprockets (3.3.5)
       rack (> 1, < 3)
@@ -187,6 +213,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    temple (0.7.6)
     themes_on_rails (0.3.0)
       rails (>= 3.2)
     thor (0.19.1)
@@ -202,6 +229,10 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
+    unicorn (5.0.1)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     warden (1.2.3)
       rack (>= 1.0)
     web-console (2.2.1)
@@ -209,33 +240,44 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    wice_grid (3.6.0.pre4)
+      activerecord (> 3.2)
+      coffee-rails (> 3.2)
+      kaminari (~> 0.16)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-datepicker-rails
+  bootstrap-sass (~> 3.3.5)
   byebug
+  carrierwave
+  carrierwave-aws
   cloudinary
   coffee-rails (~> 4.1.0)
   devise
   factory_girl
   figaro
-  haml
-  haml-rails (~> 0.9)
+  font-awesome-rails
   httparty
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-turbolinks
   pg
   rails (= 4.2.4)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   shoulda-matchers
+  slim-rails
   spring
   themes_on_rails
   turbolinks
   uglifier (>= 1.3.0)
+  unicorn
   web-console (~> 2.0)
+  wice_grid (= 3.6.0.pre4)
 
 BUNDLED WITH
    1.10.6

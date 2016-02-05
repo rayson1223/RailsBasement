@@ -21,6 +21,7 @@ gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -32,7 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -55,12 +56,24 @@ gem 'cloudinary'
 # Use Devise for management of user login
 gem 'devise'
 
-# Use Haml for replacing erb
-gem 'haml'
+# Use Slim for replacing erb
+gem 'slim-rails'
 
-# Use Haml-Rails to prevent any generation templates in erb format
-gem "haml-rails", "~> 0.9"
+# Use Bootstap as our themes base stylesheet
+gem 'bootstrap-sass', '~> 3.3.5'
 
+# Use Font Awesome for all awesome icons
+gem "font-awesome-rails"
+
+# For tables, search, pagination
+gem "wice_grid", '3.6.0.pre4'
+
+# Use for styling datepicker
+gem 'bootstrap-datepicker-rails'
+
+# File uploads
+gem 'carrierwave'
+gem 'carrierwave-aws'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
