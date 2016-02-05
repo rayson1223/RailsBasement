@@ -1,0 +1,26 @@
+{
+  "name": "Basement Project",
+  "homepage": "https://github.com/rayson1223/RailsBasement.git",
+  "authors": [
+    "Rayson <raysonlcp1223@gmail.com>"
+  ],
+  "description": "Student Portal for Pintar College",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "vendor/assets/bower_components"
+  ],
+  "dependencies": {
+
+  },
+  "resolutions":{
+
+  },
+  "main": "",
+  "moduleType": []
+}

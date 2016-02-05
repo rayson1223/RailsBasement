@@ -31,6 +31,8 @@
 
 # Environment normalisation:
 /.bundle
+/lib/assests/*
+/vendor/assets/*
 /vendor/bundle
 
 # Skip Test file
