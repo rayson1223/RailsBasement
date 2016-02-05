@@ -4,14 +4,16 @@ Rails Basement is aim to be the fundamental base repository for all of my Rails 
 
 The Rails Basement gem included:
 
-- Haml
-- Haml-rails
+- Mail Catcher (For local Email captures)
+- Unicorn
+- Slim
 - Pg (Postgresql as database)
 - Devise (For User Login Management)
 - Theme on Rails (For Multiple Theme)
 - Cloudinary (For Managing any Image Operations)
 - Rspec (For Writing Test Case)
 - Figaro (Environment Variable Management)
+- Wice Grid
 
 
 
